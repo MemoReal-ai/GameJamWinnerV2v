@@ -4,38 +4,43 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [Header("Movement")]
     [SerializeField] private float speed = 1f;
-
-    [SerializeField] private float constXY = 0f;
-    [SerializeField] private Animator animator;
     private float directionX;
     private float directionY;
-    private Rigidbody2D rb ;
-    
+    private Rigidbody2D rb;
+
+    [Header("Animator")]
+    [SerializeField] private Animator animator;
+    [SerializeField] private float constDirectionDiagonalWalk = 0.71f;
+    public TriggerController _triggerController;
+
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-    }
-
-    private void FixedUpdate()
-    {
-        HarvestInput();
-        
+        rb.freezeRotation = true;
     }
 
     private void Update()
     { 
         WalkAnimationController();
     }
+    private void FixedUpdate()
+    {
+        HarvestInput();
+
+    }
 
 
     private void HarvestInput()
     {
-        directionX = Input.GetAxis("Horizontal");
-        directionY = Input.GetAxis("Vertical");
-        var prefersMove = new Vector2(transform.position.x + directionX, transform.position.y + directionY) * speed;
-        rb.position = prefersMove;
+        directionX = Input.GetAxisRaw("Horizontal");
+        directionY = Input.GetAxisRaw("Vertical"); 
+        var moveDirection=new Vector2(directionX,directionY).normalized;
+        var prefersMove = rb.position+moveDirection* speed;
+        rb.MovePosition(prefersMove);
+        
 
     }
 
@@ -47,6 +52,10 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 animator.SetTrigger("AttackLeft");
+                if (_triggerController != null)
+                {
+                    _triggerController.ActivateTrigger();
+                }
             }
         }
         else if (directionX > 0)
@@ -55,6 +64,10 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 animator.SetTrigger("AttackRight");
+                if (_triggerController != null)
+                {
+                    _triggerController.ActivateTrigger();
+                }
             }
         }
         else if (directionX == 0 && directionY == 0)
@@ -63,6 +76,10 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 animator.SetTrigger("AttackLeft");
+                if (_triggerController != null)
+                {
+                    _triggerController.ActivateTrigger();
+                }
             }
         }
 
@@ -72,6 +89,10 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 animator.SetTrigger("AttackUp");
+                if (_triggerController != null)
+                {
+                    _triggerController.ActivateTrigger();
+                }
             }
         }
         else if (directionY < 0)
@@ -80,6 +101,10 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 animator.SetTrigger("AttackDown");
+                if (_triggerController != null)
+                {
+                    _triggerController.ActivateTrigger();
+                }
             }
         }
         
@@ -99,6 +124,3 @@ public class Player : MonoBehaviour
     
         
     }
-    
-    
-    
