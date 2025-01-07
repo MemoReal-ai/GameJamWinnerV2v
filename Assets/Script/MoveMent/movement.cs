@@ -4,38 +4,41 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [Header("Movement")]
     [SerializeField] private float speed = 1f;
-
-    [SerializeField] private float constXY = 0f;
-    [SerializeField] private Animator animator;
     private float directionX;
     private float directionY;
-    private Rigidbody2D rb ;
-    
+    private Rigidbody2D rb;
+
+    [Header("Animator")]
+    [SerializeField] private Animator animator;
+    [SerializeField] private float constDirectionDiagonalWalk = 0.71f;
+
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void FixedUpdate()
-    {
-        HarvestInput();
-        
-    }
-
     private void Update()
     { 
         WalkAnimationController();
+    }
+    private void FixedUpdate()
+    {
+        HarvestInput();
+
     }
 
 
     private void HarvestInput()
     {
-        directionX = Input.GetAxis("Horizontal");
-        directionY = Input.GetAxis("Vertical");
-        var prefersMove = new Vector2(transform.position.x + directionX, transform.position.y + directionY) * speed;
-        rb.position = prefersMove;
+        directionX = Input.GetAxisRaw("Horizontal");
+        directionY = Input.GetAxisRaw("Vertical"); 
+        var moveDirection=new Vector2(directionX,directionY).normalized;
+        var prefersMove = rb.position+moveDirection* speed;
+        rb.MovePosition(prefersMove);
+        
 
     }
 

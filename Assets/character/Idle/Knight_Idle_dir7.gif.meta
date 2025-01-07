@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Knight_Idle_dir7_0: 4783317166507279921
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

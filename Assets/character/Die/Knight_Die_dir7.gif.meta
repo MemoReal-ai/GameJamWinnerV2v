@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Knight_Die_dir7_0: 6564241811671658606
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
