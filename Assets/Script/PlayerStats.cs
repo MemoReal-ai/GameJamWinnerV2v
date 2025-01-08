@@ -7,11 +7,15 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private int damage = 1;
    
     public event Action OnHealthChanged;
+    public int Damage => damage;
 
     public void TakeDamage(int damage)
     {
         health -= damage;
         OnHealthChanged?.Invoke();
-    } 
-    
+    }
+
+  
+   
+
 }

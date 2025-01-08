@@ -423,7 +423,18 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Knight_Walk_dir3_0: 169969462582618307
+      Knight_Walk_dir3_1: 7637174619607590831
+      Knight_Walk_dir3_10: -6835844012500613789
+      Knight_Walk_dir3_2: 5095261138321953946
+      Knight_Walk_dir3_3: 4981867147135525506
+      Knight_Walk_dir3_4: -4362656506691135798
+      Knight_Walk_dir3_5: -2575800591283270792
+      Knight_Walk_dir3_6: 828012001161182769
+      Knight_Walk_dir3_7: 98197884631231980
+      Knight_Walk_dir3_8: 5023728561532376187
+      Knight_Walk_dir3_9: -193383619472957066
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

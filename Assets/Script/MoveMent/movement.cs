@@ -120,7 +120,7 @@ public class Player : MonoBehaviour
         animator.SetBool("walkDown", walkDown);
         
     }
-
+    
     
         
     }

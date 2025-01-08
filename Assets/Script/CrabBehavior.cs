@@ -1,11 +1,24 @@
+using System;
+using System.Xml.Schema;
 using UnityEngine;
 
 public class CrabBehavior : Enemy
 {
+    [Header("Animation")]
+    [SerializeField] private Animator animator;
+
+    [Header("Stats Behavior")]
+    [SerializeField] private float distanceToAttack=1;
+    [SerializeField] private float coldownAttack = 1;
+    
+    
+    private float _timeLastAttack;
+
    
-    private void Update()
+    private void FixedUpdate()
     {
         Behaviour();
+        Attack();
     }
 
     protected override void Behaviour()
@@ -18,7 +31,28 @@ public class CrabBehavior : Enemy
 
     protected override void Attack()
     {
-        base.Attack();
-    }
-}
+        var distance=Vector2.Distance(transform.position, player.transform.position);
 
+        _timeLastAttack += Time.deltaTime;
+        if (distance < distanceToAttack&& _timeLastAttack>coldownAttack)
+        {
+            animator.SetTrigger("Attack");
+            base.Attack();
+            _timeLastAttack=0;
+        }
+    }
+
+    protected override void LogicTakeDamage()
+    {
+        base.LogicTakeDamage();
+    }
+
+    protected virtual void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("DamageTrigger"))
+        {
+            LogicTakeDamage();
+        }
+    }
+
+}

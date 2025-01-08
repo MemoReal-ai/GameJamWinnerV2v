@@ -348,7 +348,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Knight_Run_dir1_0: 4321818426806521429
+      Knight_Run_dir1_1: 4969246686720251043
+      Knight_Run_dir1_2: -7795304887761356784
+      Knight_Run_dir1_3: 3925515047104207736
+      Knight_Run_dir1_4: 8488066236020088033
+      Knight_Run_dir1_5: -8561280578544319721
+      Knight_Run_dir1_6: -3459385279312648587
+      Knight_Run_dir1_7: -1283837019457738217
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

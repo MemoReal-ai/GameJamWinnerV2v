@@ -573,7 +573,24 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Knight_Idle_dir7_0: 4783317166507279921
+      Knight_Idle_dir7_1: -4305169375046983955
+      Knight_Idle_dir7_10: 2221625391928535794
+      Knight_Idle_dir7_11: -8029226271491432253
+      Knight_Idle_dir7_12: 450099135154580551
+      Knight_Idle_dir7_13: 1603112905051507662
+      Knight_Idle_dir7_14: 4193167894330944833
+      Knight_Idle_dir7_15: 653620977605052697
+      Knight_Idle_dir7_16: 1924287187940415481
+      Knight_Idle_dir7_2: -6516654427539468343
+      Knight_Idle_dir7_3: 8895005610141817674
+      Knight_Idle_dir7_4: -7792672295760258539
+      Knight_Idle_dir7_5: -836947879769643101
+      Knight_Idle_dir7_6: -165481845944140696
+      Knight_Idle_dir7_7: 1696194291029982969
+      Knight_Idle_dir7_8: 4601365896327751854
+      Knight_Idle_dir7_9: 663123770203421851
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
