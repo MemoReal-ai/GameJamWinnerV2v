@@ -27,8 +27,6 @@ public class TriggerController : MonoBehaviour
     private IEnumerator EnableTriggerForDuration()
     {
         yield return new WaitForSeconds(timeDelay);
-        
-        
         triggerZone.enabled = true; 
         yield return new WaitForSeconds(duration); 
         triggerZone.enabled = false; 
