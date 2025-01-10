@@ -8,7 +8,6 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] private int damage=1;
     [SerializeField] private int health = 1;
 
-    private float speedRotation=20;
     protected PlayerStats player;
     public event Action OnHealthChanged; 
 

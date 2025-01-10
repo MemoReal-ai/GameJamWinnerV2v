@@ -65,7 +65,9 @@ public class Player : MonoBehaviour
                 {
                     StartCoroutine(DashTime(dashDirection * dashDistance));
                     timeLastDash = Time.time;
+                    Debug.Log("Dash");
                 }
+                Debug.Log("Dash");
             }
         }
         
@@ -85,7 +87,7 @@ public class Player : MonoBehaviour
         {
             float t = elapsedTime / dashDuration;
             transform.position = Vector3.Lerp(startPosition, dashTarget, t);
-            elapsedTime += Time.fixedDeltaTime;
+            elapsedTime += Time.deltaTime;
             yield return new WaitForFixedUpdate();
         }
         transform.position = dashTarget;

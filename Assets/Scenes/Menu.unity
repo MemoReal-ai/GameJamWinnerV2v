@@ -571,7 +571,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 700739583}
-        m_TargetAssemblyTypeName: ButtonScripts, Assembly-CSharp
+        m_TargetAssemblyTypeName: MenuButton, Assembly-CSharp
         m_MethodName: OpenGame
         m_Mode: 1
         m_Arguments:
@@ -629,7 +629,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 700739578}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23808294ec78afd41be35c933cabddbf, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f2316e86e00d174daea96ec5d09f6bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1219383670
