@@ -1,14 +1,17 @@
 
 using System;
+using System.Collections;
+using System.Collections;
 using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
     [SerializeField] protected float speed=3;
-    [SerializeField] private int damage=1;
-    [SerializeField] private int health = 1;
+    [SerializeField] protected int damage=1;
+    [SerializeField] protected int health = 1;
+    public event Action OnDeath;
+    
 
-    private float speedRotation=20;
     protected PlayerStats player;
     public event Action OnHealthChanged; 
 
@@ -35,17 +38,15 @@ public abstract class Enemy : MonoBehaviour
         
         if (health <= 0)
         {
+            
+            
+            
+            OnDeath?.Invoke();
             Destroy(gameObject);
         }
         
-    }
-
-    
         
-    
-    
-    
-    
-    
+        
+    }
     
 }

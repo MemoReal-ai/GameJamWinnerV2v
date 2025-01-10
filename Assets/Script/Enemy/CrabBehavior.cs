@@ -1,6 +1,8 @@
 using System;
 using System.Xml.Schema;
+using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections;
 
 public class CrabBehavior : Enemy
 {
@@ -36,6 +38,8 @@ public class CrabBehavior : Enemy
         _timeLastAttack += Time.deltaTime;
         if (distance < distanceToAttack&& _timeLastAttack>coldownAttack)
         {
+            
+            
             animator.SetTrigger("Attack");
             base.Attack();
             _timeLastAttack=0;
@@ -44,6 +48,7 @@ public class CrabBehavior : Enemy
 
     protected override void LogicTakeDamage()
     {
+        
         base.LogicTakeDamage();
     }
 
@@ -55,6 +60,22 @@ public class CrabBehavior : Enemy
         }
     }
 
+    private void OnEnable()
+    {
+        OnDeath += DeathAnimation;
+    }
+
+    private void OnDisable()
+    {
+        OnDeath -= DeathAnimation;
+    }
+
+    private void DeathAnimation()
+    {
+        animator.SetBool("death",true);
+    }
+
+   
 }
 
 
