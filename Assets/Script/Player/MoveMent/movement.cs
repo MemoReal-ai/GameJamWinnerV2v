@@ -9,9 +9,11 @@ public class Player : MonoBehaviour
     [SerializeField] private float speed = 1f;
     [SerializeField] private float chargeSpeed = 0.2f;
     [SerializeField] private float dashDistance = 2f;
+    [SerializeField] private float dashCooldawn = 1f;
     private float directionX;
     private float directionY;
     private Rigidbody2D rb;
+    private float timeLastDash;
 
     [Header("Animator")]
     [SerializeField] private Animator animator;
@@ -20,7 +22,8 @@ public class Player : MonoBehaviour
 
 
     private void Start()
-    {
+    {   
+        timeLastDash=-dashCooldawn;
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
     }
@@ -29,11 +32,12 @@ public class Player : MonoBehaviour
     { 
         WalkAnimationController();
         Charge();
+
     }
     private void FixedUpdate()
     {
         HarvestInput();
-      
+        
 
     }
 
@@ -51,14 +55,20 @@ public class Player : MonoBehaviour
 
     private void Charge()
     {
+        var difDash = Time.time - timeLastDash;
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            var dashDirection = new Vector2(directionX, directionY).normalized;
-            if (dashDirection != Vector2.zero) 
+            if (difDash >= dashCooldawn)
             {
-                StartCoroutine(DashTime(dashDirection * dashDistance));
+                var dashDirection = new Vector2(directionX, directionY).normalized;
+                if (dashDirection != Vector2.zero)
+                {
+                    StartCoroutine(DashTime(dashDirection * dashDistance));
+                    timeLastDash = Time.time;
+                }
             }
         }
+        
     }
 
     private IEnumerator DashTime(Vector2 dashDirection)
@@ -79,6 +89,8 @@ public class Player : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
         transform.position = dashTarget;
+
+        
     }
 
 

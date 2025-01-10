@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Xml.Schema;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ public class CrabBehavior : Enemy
     [Header("Stats Behavior")]
     [SerializeField] private float distanceToAttack=1;
     [SerializeField] private float coldownAttack = 1;
-
+    [SerializeField] private float delay = 1;
 
     private float _timeLastAttack;
 
@@ -31,16 +32,34 @@ public class CrabBehavior : Enemy
 
     protected override void Attack()
     {
-        var distance=Vector2.Distance(transform.position, player.transform.position);
+        var distance = Vector2.Distance(transform.position, player.transform.position);
 
-        _timeLastAttack += Time.deltaTime;
-        if (distance < distanceToAttack&& _timeLastAttack>coldownAttack)
+        if (distance < distanceToAttack)
+        {
+            _timeLastAttack += Time.deltaTime;
+        }
+        else
+        {
+            _timeLastAttack = 0;
+        }
+        if (_timeLastAttack > coldownAttack)
         {
             animator.SetTrigger("Attack");
-            base.Attack();
-            _timeLastAttack=0;
+
+            StartCoroutine(DelayDamage());
+
+
+            _timeLastAttack = 0;
+
         }
     }
+     private IEnumerator DelayDamage()
+    {
+        yield return new WaitForSeconds(delay);
+        base.Attack();
+    }
+
+
 
     protected override void LogicTakeDamage()
     {
