@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 
@@ -6,6 +7,8 @@ public class Player : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] private float speed = 1f;
+    [SerializeField] private float chargeSpeed = 0.2f;
+    [SerializeField] private float dashDistance = 2f;
     private float directionX;
     private float directionY;
     private Rigidbody2D rb;
@@ -25,10 +28,12 @@ public class Player : MonoBehaviour
     private void Update()
     { 
         WalkAnimationController();
+        Charge();
     }
     private void FixedUpdate()
     {
         HarvestInput();
+      
 
     }
 
@@ -44,7 +49,41 @@ public class Player : MonoBehaviour
 
     }
 
-    private void WalkAnimationController()
+    private void Charge()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            var dashDirection = new Vector2(directionX, directionY).normalized;
+            if (dashDirection != Vector2.zero) 
+            {
+                StartCoroutine(DashTime(dashDirection * dashDistance));
+            }
+        }
+    }
+
+    private IEnumerator DashTime(Vector2 dashDirection)
+    {
+        float dashDuration = chargeSpeed;
+        float dashDistance = this.dashDistance;
+
+
+        Vector3 startPosition = transform.position;
+        Vector3 dashTarget = startPosition + (Vector3)dashDirection * dashDistance;
+
+        float elapsedTime = 0f;
+        while (elapsedTime < dashDuration)
+        {
+            float t = elapsedTime / dashDuration;
+            transform.position = Vector3.Lerp(startPosition, dashTarget, t);
+            elapsedTime += Time.fixedDeltaTime;
+            yield return new WaitForFixedUpdate();
+        }
+        transform.position = dashTarget;
+    }
+
+
+
+private void WalkAnimationController()
     {
         if (directionX < 0)
         {
