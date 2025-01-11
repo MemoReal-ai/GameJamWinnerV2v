@@ -49,7 +49,7 @@ public class EnemySpawner : MonoBehaviour
 
                 GameObject enemy = Instantiate(data.enemyPrefab, randomPosition, Quaternion.identity);
                 spawnedEnemies.Add(enemy);
-                enemy.GetComponent<Enemy>().OnDeath += OnEnemyDeath;
+                enemy.GetComponent<Enemy>()._OnDeath += OnEnemyDeath;
             }
         }
     }

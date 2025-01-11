@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 592186536931376173}
   - component: {fileID: 5854135083354895743}
   - component: {fileID: 5210838092520516747}
-  - component: {fileID: 4715283148806586704}
   m_Layer: 0
   m_Name: EnemyCrab
   m_TagString: Enemy
@@ -213,6 +212,9 @@ MonoBehaviour:
   speed: 1
   damage: 1
   health: 1
+  chanceAddCoin: 1
+  rewardCoin: 1
+  prefabCoin: {fileID: 5813379124849799375, guid: 8a204e8909962cb4bb2ab0830ded92c2, type: 3}
   animator: {fileID: 5210838092520516747}
   distanceToAttack: 1
   coldownAttack: 1
@@ -238,18 +240,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4715283148806586704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2922035433087714993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58ec436d700012c4d899f060b5d410c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3335179822432276902
 GameObject:
   m_ObjectHideFlags: 0

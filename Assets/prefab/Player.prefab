@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 1618037286144444627}
   - component: {fileID: 4185817675484598621}
   - component: {fileID: 1451914620261549057}
-  - component: {fileID: 4342674228853008590}
   - component: {fileID: 6668189625465230693}
+  - component: {fileID: 7554850062479820734}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -187,21 +187,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4342674228853008590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5108738484096447651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c90862a3f3395d242a5c34daeaa73cac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.1
-  animator: {fileID: 1451914620261549057}
-  constDirectionDiagonalWalk: 0.71
 --- !u!114 &6668189625465230693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,5 +199,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0a5ab56dd2c1f4397c73980445d321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 4
+  currentHealth: 4
   damage: 1
+--- !u!114 &7554850062479820734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5108738484096447651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71f02bf7d8182940a1b2bd944f9654a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bucketPlayer: 1
