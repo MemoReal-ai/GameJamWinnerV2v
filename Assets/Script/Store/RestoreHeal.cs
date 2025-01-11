@@ -1,10 +1,12 @@
 using UnityEngine;
 
-public class RestoreHeal : Buffs
+public class RestoreHeal : Buff
 
 {
-    protected override void ApplyBuff()
+    protected override void ApplyBuff(PlayerStats player)
     {
        player.RestoreHeal();
     }
+
+  
 }
