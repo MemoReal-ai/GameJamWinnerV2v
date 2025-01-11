@@ -7,9 +7,10 @@ public class Spawn : MonoBehaviour
 {
     [SerializeField] private Vector3 test;
     [SerializeField] private GameObject prefab;
-   
+
     private void Start()
     {
-        Instantiate(prefab,test,Quaternion.identity);
+        Instantiate(prefab, test, Quaternion.identity);
+      
     }
 }

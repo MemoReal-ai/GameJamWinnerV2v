@@ -176,12 +176,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 639ffe125b99f054185f3c7a09062fb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2
   damage: 1
   health: 1
+  chanceAddCoin: 1
+  rewardCoin: 10
+  prefabCoin: {fileID: 2506094141756035781, guid: ada123f8dadda63429c998d6a8847437, type: 3}
   animator: {fileID: 5210838092520516747}
   distanceToAttack: 1
   coldownAttack: 1
+  delay: 1
 --- !u!95 &5210838092520516747
 Animator:
   serializedVersion: 7

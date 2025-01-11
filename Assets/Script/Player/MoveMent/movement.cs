@@ -65,9 +65,9 @@ public class Player : MonoBehaviour
                 {
                     StartCoroutine(DashTime(dashDirection * dashDistance));
                     timeLastDash = Time.time;
-                    Debug.Log("Dash");
+                   
                 }
-                Debug.Log("Dash");
+
             }
         }
         
