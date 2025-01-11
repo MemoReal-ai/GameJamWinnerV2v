@@ -1,51 +1,69 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawn : MonoBehaviour
+public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject enemyPrefab; 
-    [SerializeField] private GameObject SecondenemyPrefab;
-    [SerializeField] private int minEnemies = 1;     
-    [SerializeField] private int maxEnemies = 5;     
-
-    private BoxCollider2D triggerZone; 
-    private bool hasSpawned = false; 
-
-    private void Awake()
+    [System.Serializable]
+    public class EnemyPrefabData
     {
+        public GameObject enemyPrefab;
+        public int enemyCount;
+    }
 
-        triggerZone = GetComponent<BoxCollider2D>();
-        if (triggerZone == null || !triggerZone.isTrigger) ;
+    [SerializeField] private List<EnemyPrefabData> enemyPrefabsData;
+    [SerializeField] private BoxCollider2D triggerCollider;
+    [SerializeField] private List<GameObject> transitionObjects;
+    private List<GameObject> spawnedEnemies = new List<GameObject>();
+    private bool hasSpawnedEnemies = false;
 
+    void Start()
+    {
+        triggerCollider.enabled = true;
+        triggerCollider.isTrigger = true;
+        foreach (var transition in transitionObjects)
+        {
+            transition.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-
-        if (other.CompareTag("Player") && !hasSpawned)
+        if (other.CompareTag("Player") && !hasSpawnedEnemies)
         {
-            hasSpawned = true;
+            hasSpawnedEnemies = true;
             SpawnEnemies();
         }
     }
 
-    private void SpawnEnemies()
+    public void SpawnEnemies()
     {
-        int enemyCount = Random.Range(minEnemies, maxEnemies + 1); 
-        for (int i = 0; i < enemyCount; i++)
+        foreach (var data in enemyPrefabsData)
         {
-            Vector2 randomPosition = GetRandomPositionInTrigger();
-            Instantiate(enemyPrefab, randomPosition, Quaternion.identity); 
+            for (int i = 0; i < data.enemyCount; i++)
+            {
+                Vector2 randomPosition = new Vector2(
+                    Random.Range(triggerCollider.bounds.min.x, triggerCollider.bounds.max.x),
+                    Random.Range(triggerCollider.bounds.min.y, triggerCollider.bounds.max.y)
+                );
+
+                GameObject enemy = Instantiate(data.enemyPrefab, randomPosition, Quaternion.identity);
+                spawnedEnemies.Add(enemy);
+                enemy.GetComponent<Enemy>().OnDeath += OnEnemyDeath;
+            }
         }
     }
 
-    private Vector2 GetRandomPositionInTrigger()
+    private void OnEnemyDeath(GameObject enemy)
     {
-        Vector2 randomOffset = new Vector2(
-            Random.Range(-triggerZone.size.x / 2, triggerZone.size.x / 2),
-            Random.Range(-triggerZone.size.y / 2, triggerZone.size.y / 2)
-        );
-        return (Vector2)transform.position + randomOffset;
-    }
+        spawnedEnemies.Remove(enemy);
 
-   
+        if (spawnedEnemies.Count == 0)
+        {
+            foreach (var transition in transitionObjects)
+            {
+                transition.SetActive(true);
+            }
+        }
+    }
 }

@@ -1,52 +1,46 @@
-
 using System;
-using System.Collections;
-using System.Collections;
 using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
-    [SerializeField] protected float speed=3;
-    [SerializeField] protected int damage=1;
+    [SerializeField] protected float speed = 3f;
+    [SerializeField] protected int damage = 1;
     [SerializeField] protected int health = 1;
-    public event Action OnDeath;
-    
+
+    public event Action<GameObject> OnDeath;
+    public event Action OnHealthChanged;
 
     protected PlayerStats player;
-    public event Action OnHealthChanged; 
 
     private void Start()
     {
-      player=FindAnyObjectByType<PlayerStats>();    
+        player = FindObjectOfType<PlayerStats>();
     }
-    protected virtual void Behaviour() 
-    {
 
-    }
+    protected virtual void Behaviour() { }
 
     protected virtual void Attack()
     {
-        player.TakeDamage(damage);
-   
+        if (player != null)
+        {
+            player.TakeDamage(damage);
+        }
     }
 
-    protected virtual void LogicTakeDamage()
+    public virtual void TakeDamage(int damageAmount)
     {
-        health -= player.Damage;
-        
+        health -= damageAmount;
         OnHealthChanged?.Invoke();
-        
+
         if (health <= 0)
         {
-            
-            
-            
-            OnDeath?.Invoke();
-            Destroy(gameObject);
+            Die();
         }
-        
-        
-        
     }
-    
+
+    protected virtual void Die()
+    {
+        OnDeath?.Invoke(gameObject);
+        Destroy(gameObject);
+    }
 }

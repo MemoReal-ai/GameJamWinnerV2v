@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4437999726575160302}
-  - component: {fileID: 5845622153098334602}
   - component: {fileID: 8935583069441778016}
+  - component: {fileID: 2150446875809429963}
   m_Layer: 0
   m_Name: spawnerCrabi
   m_TagString: Untagged
@@ -33,22 +33,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5845622153098334602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5033160091298272700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01b46370e81244c4b9fd20810501c009, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 2922035433087714993, guid: 178045803045637478ce21db0328a440, type: 3}
-  SecondenemyPrefab: {fileID: 0}
-  minEnemies: 1
-  maxEnemies: 10
 --- !u!61 &8935583069441778016
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -95,3 +79,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 18.904625, y: 10.754551}
   m_EdgeRadius: 0
+--- !u!114 &2150446875809429963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5033160091298272700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01b46370e81244c4b9fd20810501c009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabsData:
+  - enemyPrefab: {fileID: 2922035433087714993, guid: 178045803045637478ce21db0328a440, type: 3}
+    enemyCount: 5
+  triggerCollider: {fileID: 8935583069441778016}
+  transitionObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

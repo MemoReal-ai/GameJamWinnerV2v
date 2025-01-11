@@ -95,7 +95,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3441881625473851012}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -149,10 +149,11 @@ GameObject:
   - component: {fileID: 4408910957662394577}
   - component: {fileID: 403680585452972495}
   - component: {fileID: 5819981266976398054}
+  - component: {fileID: 6379588050735653633}
   - component: {fileID: 754623237429492377}
   m_Layer: 0
   m_Name: Player 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -216,7 +217,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 55
   m_Sprite: {fileID: 6808297775209088292, guid: fe515b50dfc25e64b9bb904748095c38, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -313,7 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c47f0f3cd40466143a11573e777e9a09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.3
+  speed: 0.05
   animator: {fileID: 403680585452972495}
   constDirectionDiagonalWalk: 0.71
   _triggerController: {fileID: 5819981266976398054}
@@ -352,7 +353,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerZone: {fileID: 3947102332986190007}
-  duration: 1
+  duration: 0.3
+  timeDelay: 0.5
+--- !u!114 &6379588050735653633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5541588977655579565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6be846a46b087459a1fafc1da2eae9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 754623237429492377}
+  spriteRenderer: {fileID: 3362307507636785742}
+  timeToBlink: 0.1
+  blincCount: 3
 --- !u!114 &754623237429492377
 MonoBehaviour:
   m_ObjectHideFlags: 0
