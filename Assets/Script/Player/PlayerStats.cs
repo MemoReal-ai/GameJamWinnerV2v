@@ -9,13 +9,15 @@ public class PlayerStats : MonoBehaviour
     private int maxHealth;
     public event Action OnHealthChanged;
     public event Action OnDead;
+    public event Action DamageChanged;
 
     public int Damage => damage;
 
     private void Start()
     {
-
         maxHealth = currentHealth;
+
+        
         OnHealthChanged?.Invoke();
     }
 
@@ -27,13 +29,14 @@ public class PlayerStats : MonoBehaviour
 
     public void ApllyHealth(int health)
     {
-        maxHealth += health;
-        currentHealth += health;
+        this.maxHealth += health;
+        this.currentHealth += health;
         OnHealthChanged?.Invoke();
     }
     public void ApllyDamage(int damage)
     {
         this.damage += damage;
+        DamageChanged?.Invoke();
     }
 
     public void TakeDamage(int damage)

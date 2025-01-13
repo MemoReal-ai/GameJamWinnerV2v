@@ -316,6 +316,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.05
+  chargeSpeed: 0.2
+  dashDistance: 1.75
+  dashCooldawn: 0.5
   animator: {fileID: 403680585452972495}
   constDirectionDiagonalWalk: 0.71
   _triggerController: {fileID: 5819981266976398054}
@@ -384,7 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0a5ab56dd2c1f4397c73980445d321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 4
+  currentHealth: 10
   damage: 1
 --- !u!114 &8013522273659539069
 MonoBehaviour:
@@ -398,4 +401,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a71f02bf7d8182940a1b2bd944f9654a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bucketPlayer: 1
+  bucketPlayer: 10000
