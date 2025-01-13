@@ -76,6 +76,7 @@ public abstract class Enemy : MonoBehaviour
     }
     protected virtual void Die()
     {
+        OnDeath?.Invoke();
         _OnDeath?.Invoke(gameObject);
         Destroy(gameObject);
     }
