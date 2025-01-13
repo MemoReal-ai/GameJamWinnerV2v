@@ -20460,6 +20460,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1293441860}
     m_Modifications:
+    - target: {fileID: 4408910957662394577, guid: fec15d15a583f6e4194e959a1a5ce4d5, type: 3}
+      propertyPath: dashCooldawn
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408910957662394577, guid: fec15d15a583f6e4194e959a1a5ce4d5, type: 3}
+      propertyPath: dashDistance
+      value: 1.75
+      objectReference: {fileID: 0}
     - target: {fileID: 5541588977655579565, guid: fec15d15a583f6e4194e959a1a5ce4d5, type: 3}
       propertyPath: m_Name
       value: Player 1
