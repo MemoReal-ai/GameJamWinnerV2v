@@ -3,34 +3,46 @@ using System.Collections;
 
 public class TriggerController : MonoBehaviour
 {
-    public Collider2D triggerZone; 
+    public Collider2D triggerZone;
     public float duration = 1.0f;
     [SerializeField] private float timeDelay = 0.5f;
 
-    private Coroutine triggerCoroutine;
-
+    private float timer = 0f; 
+    private bool isTriggerActive = false;
 
     public void ActivateTrigger()
     {
-        
-        
-        
-        if (triggerCoroutine != null)
+        timer = timeDelay + duration;
+
+        if (!isTriggerActive)
         {
-            StopCoroutine(triggerCoroutine); 
+            StartCoroutine(HandleTrigger());
         }
-        triggerCoroutine = StartCoroutine(EnableTriggerForDuration());
     }
-    
-    
 
-    private IEnumerator EnableTriggerForDuration()
+    private IEnumerator HandleTrigger()
     {
-        yield return new WaitForSeconds(timeDelay);
-        triggerZone.enabled = true; 
-        yield return new WaitForSeconds(duration); 
+        isTriggerActive = true;
+
+        while (timer > 0f)
+        {
+            timer -= Time.deltaTime;
+            yield return null;
+        }
+
         triggerZone.enabled = false; 
+        isTriggerActive = false;
     }
 
-  
+    private void Update()
+    {
+        if (timer > duration)
+        {
+            triggerZone.enabled = false;
+        }
+        else if (timer > 0f)
+        {
+            triggerZone.enabled = true;
+        }
+    }
 }

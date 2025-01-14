@@ -211,10 +211,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   damage: 1
-  health: 1
+  health: 3
   chanceAddCoin: 1
   rewardCoin: 1
-  prefabCoin: {fileID: 5813379124849799375, guid: 8a204e8909962cb4bb2ab0830ded92c2, type: 3}
+  prefabCoin: {fileID: 6370713099634583681, guid: de3e5703e53068843a843c431620d958, type: 3}
   animator: {fileID: 5210838092520516747}
   distanceToAttack: 1
   coldownAttack: 1

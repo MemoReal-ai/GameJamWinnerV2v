@@ -11,28 +11,56 @@ public class Shop : MonoBehaviour
     [SerializeField] private byte countBuff = 3;
     [SerializeField] private Button exitButton;
     [SerializeField] private Button rerolButton;
-    
-    private List<GameObject> baffConteinerList=new List<GameObject>();
+    [SerializeField] private int costRerol = 1;
+
+    private List<GameObject> baffConteinerList = new List<GameObject>();
     private void Start()
     {
-        rerolButton.onClick.AddListener(ReloadShop);
+        rerolButton.onClick.AddListener(ReloadBuffs);
         exitButton.onClick.AddListener(ExitInShop);
-        ReloadShop();
+        StartReloadShop();
     }
 
-    private void ReloadShop()
+    private void StartReloadShop()
     {
         foreach (Transform child in transformConteiner)
             Destroy(child.gameObject);
-              baffConteinerList.Clear();
+
+        baffConteinerList.Clear();
 
         for (int i = 0; i < countBuff; i++)
-        {  
-            var randomBuff=Random.Range(0,baffConteiner.Count);
-            var buff=Instantiate(baffConteiner[randomBuff], transformConteiner);
-            baffConteinerList.Add(buff);
-     } }
+        {
+            var randomBuff = Random.Range(0, baffConteiner.Count);
+            var buff = Instantiate(baffConteiner[randomBuff], transformConteiner);
+            if (buff.TryGetComponent(out Buff buffs))
+            {
+                baffConteinerList.Add(buff);
+                buffs.Button.onClick.AddListener(() => BuyBuff(buff));
+            }
+        }
+    }
 
+    private void BuyBuff(GameObject buffGo)
+    {
+        if (buffGo.TryGetComponent(out Buff buff) && playerResources.BucketPlayer >= buff.Cost)
+        {
+            playerResources.SpendCoin(buff.Cost);
+            buff.ApplyBuff(playerStats);
+            baffConteinerList.Remove(buffGo);
+            Destroy(buffGo);
+        }
+    }
+
+
+    private void ReloadBuffs()
+    {
+        if (playerResources.BucketPlayer < costRerol)
+        {
+            return;
+        }
+        playerResources.SpendCoin(costRerol);
+        StartReloadShop();
+    }
 
 
     private void ExitInShop()
@@ -41,3 +69,4 @@ public class Shop : MonoBehaviour
 
     }
 }
+

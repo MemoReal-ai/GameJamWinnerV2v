@@ -4,7 +4,7 @@ public class Coin : MonoBehaviour
 {
      [SerializeField] private PlayerResources playerS;
         
-     private int coinValue;
+     private int coinValue=1;
 
 
     private void OnTriggerStay2D(Collider2D collision)
