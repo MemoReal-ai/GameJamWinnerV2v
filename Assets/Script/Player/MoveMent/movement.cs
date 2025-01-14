@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 
@@ -6,9 +7,13 @@ public class Player : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] private float speed = 1f;
+    [SerializeField] private float dashDistance = 2f;
+    [SerializeField] private float dashCooldawn = 1f;
+    [SerializeField] private float chargeSpeed = 0.2f;
     private float directionX;
     private float directionY;
     private Rigidbody2D rb;
+    private float timeLastDash;
 
     [Header("Animator")]
     [SerializeField] private Animator animator;
@@ -18,6 +23,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        timeLastDash = -dashCooldawn;
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
     }
@@ -25,6 +31,7 @@ public class Player : MonoBehaviour
     private void Update()
     { 
         WalkAnimationController();
+        Charge();
     }
     private void FixedUpdate()
     {
@@ -41,6 +48,47 @@ public class Player : MonoBehaviour
         var prefersMove = rb.position+moveDirection* speed;
         rb.MovePosition(prefersMove);
         
+
+    }
+    private void Charge()
+    {
+        var difDash = Time.time - timeLastDash;
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (difDash >= dashCooldawn)
+            {
+                var dashDirection = new Vector2(directionX, directionY).normalized;
+                if (dashDirection != Vector2.zero)
+                {
+                    StartCoroutine(DashTime(dashDirection * dashDistance));
+                    timeLastDash = Time.time;
+
+                }
+
+            }
+        }
+
+    }
+
+    private IEnumerator DashTime(Vector2 dashDirection)
+    {
+        float dashDuration = chargeSpeed;
+        float dashDistance = this.dashDistance;
+
+
+        Vector3 startPosition = transform.position;
+        Vector3 dashTarget = startPosition + (Vector3)dashDirection * dashDistance;
+
+        float elapsedTime = 0f;
+        while (elapsedTime < dashDuration)
+        {
+            float t = elapsedTime / dashDuration;
+            transform.position = Vector3.Lerp(startPosition, dashTarget, t);
+            elapsedTime += Time.deltaTime;
+            yield return new WaitForFixedUpdate();
+        }
+        transform.position = dashTarget;
+
 
     }
 

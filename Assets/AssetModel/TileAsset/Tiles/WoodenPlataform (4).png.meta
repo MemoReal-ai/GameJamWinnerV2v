@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      WoodenPlataform (4)_0: -7088477575950770349
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

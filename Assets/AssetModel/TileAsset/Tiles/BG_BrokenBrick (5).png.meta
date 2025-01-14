@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BG_BrokenBrick (5)_0: -4966945278713504217
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
