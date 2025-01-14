@@ -12,7 +12,11 @@ public class Shop : MonoBehaviour
     [SerializeField] private Button exitButton;
     [SerializeField] private Button rerolButton;
     [SerializeField] private int costRerol = 1;
+    
+    [SerializeField] private Player _player;
 
+    
+    
     private List<GameObject> baffConteinerList = new List<GameObject>();
     private void Start()
     {
@@ -66,6 +70,8 @@ public class Shop : MonoBehaviour
     private void ExitInShop()
     {
         gameObject.SetActive(false);
+        _player.enabled = true;
+        
 
     }
 }

@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
     private void Charge()
     {
         var difDash = Time.time - timeLastDash;
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             if (difDash >= dashCooldawn)
             {
