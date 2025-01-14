@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
 
         while (elapsedTime < dashDuration)
         {
-            float t = elapsedTime / dashDuration;
+           float t = elapsedTime / dashDuration;
            Vector3 currentPosition = Vector3.Lerp(startPosition, dashTarget, t);
            RaycastHit2D ray = Physics2D.Linecast(startPosition, currentPosition, ~LayerMask.GetMask("Player"));
 

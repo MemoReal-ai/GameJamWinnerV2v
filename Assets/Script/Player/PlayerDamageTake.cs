@@ -18,7 +18,7 @@ public class PlayerDamegeTakeView : MonoBehaviour
         player.OnHealthChanged -= ViewDamage;
     }
 
-    private void ViewDamage()
+    private void ViewDamage(float health)
     {
         StartCoroutine(Delay());   
     }

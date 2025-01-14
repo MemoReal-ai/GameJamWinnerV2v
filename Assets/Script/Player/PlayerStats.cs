@@ -7,7 +7,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private int damage = 1;
 
     private int maxHealth;
-    public event Action OnHealthChanged;
+    public event Action<float> OnHealthChanged;
     public event Action OnDead;
 
     public int Damage => damage;
@@ -16,20 +16,20 @@ public class PlayerStats : MonoBehaviour
     {
 
         maxHealth = currentHealth;
-        OnHealthChanged?.Invoke();
+        OnHealthChanged?.Invoke(Clamper01Health());
     }
 
     public void RestoreHeal()
     {
         currentHealth = maxHealth;
-        OnHealthChanged?.Invoke();
+        OnHealthChanged?.Invoke(Clamper01Health());
     }
 
     public void ApllyHealth(int health)
     {
         maxHealth += health;
         currentHealth += health;
-        OnHealthChanged?.Invoke();
+        OnHealthChanged?.Invoke(Clamper01Health());
     }
     public void ApllyDamage(int damage)
     {
@@ -40,7 +40,7 @@ public class PlayerStats : MonoBehaviour
     {
       
         currentHealth -= damage;
-        OnHealthChanged?.Invoke();
+        OnHealthChanged?.Invoke(Clamper01Health());
 
         if (currentHealth == 0)
         {
@@ -48,4 +48,10 @@ public class PlayerStats : MonoBehaviour
         }
     } 
     
+    private float Clamper01Health()
+    {
+
+        return (float)currentHealth/maxHealth;
+    }
+
 }
