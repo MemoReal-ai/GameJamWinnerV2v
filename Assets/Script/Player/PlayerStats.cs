@@ -25,6 +25,7 @@ public class PlayerStats : MonoBehaviour
         OnHealthChanged?.Invoke(Clamper01Health());
     }
 
+
     public void ApllyHealth(int health)
     {
         maxHealth += health;

@@ -7,7 +7,8 @@ public abstract class Enemy : MonoBehaviour
     [Header("Stats Enemy")]
     [SerializeField] protected float speed=3;
     [SerializeField] private int damage=1;
-    [SerializeField] private int health = 1;
+    [SerializeField] private int currentHealth = 1;
+    private int maxHealth;
     
     [Header("Resources")]
     [SerializeField, Range(0f, 1f)] protected float chanceAddCoin=0.5f;
@@ -16,7 +17,7 @@ public abstract class Enemy : MonoBehaviour
 
 
     protected PlayerStats player;
-    public event Action OnHealthChanged; 
+    public event Action<float> OnHealthChanged; 
     public event Action OnDeath;
     public event Action<GameObject> _OnDeath;
 
@@ -26,6 +27,7 @@ public abstract class Enemy : MonoBehaviour
 
     private void Start()
     {
+        maxHealth = currentHealth;
         player=FindAnyObjectByType<PlayerStats>();    
     }
     protected virtual void Behaviour() 
@@ -38,10 +40,10 @@ public abstract class Enemy : MonoBehaviour
 
     public virtual void TakeDamage(int damageAmount)
     {
-        health -= damageAmount;
-        OnHealthChanged?.Invoke();
+        currentHealth -= damageAmount;
+        OnHealthChanged?.Invoke(Clamper01Health());
 
-        if (health <= 0)
+        if (currentHealth <= 0)
         {
             Die();
         }
@@ -81,5 +83,9 @@ public abstract class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
+    private float Clamper01Health()
+    {
 
+        return (float)currentHealth / maxHealth;
+    }
 }
