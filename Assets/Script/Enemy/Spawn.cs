@@ -33,6 +33,7 @@ public class EnemySpawner : MonoBehaviour
         {
             hasSpawnedEnemies = true;
             SpawnEnemies();
+            TeleportManager.Instance.UpdateTeleportPoint(transform.position);
         }
     }
 

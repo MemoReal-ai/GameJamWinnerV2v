@@ -321,7 +321,7 @@ MonoBehaviour:
   chargeSpeed: 0.2
   animator: {fileID: 403680585452972495}
   constDirectionDiagonalWalk: 0.71
-  _triggerController: {fileID: 5819981266976398054}
+  teleportTarget: {fileID: 1119715331785708151, guid: 85d68fad8bcfa0b4fb57b7b01485ca17, type: 3}
 --- !u!95 &403680585452972495
 Animator:
   serializedVersion: 7
