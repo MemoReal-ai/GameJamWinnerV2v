@@ -17,8 +17,8 @@ public class Player : MonoBehaviour
 
     [Header("Animator")]
     [SerializeField] private Animator animator;
-    [SerializeField] private float constDirectionDiagonalWalk = 0.71f;
     public TriggerController _triggerController;
+
 
 
     private void Start()
@@ -29,9 +29,10 @@ public class Player : MonoBehaviour
     }
 
     private void Update()
-    { 
+    {
         WalkAnimationController();
         Charge();
+
     }
     private void FixedUpdate()
     {
@@ -43,11 +44,11 @@ public class Player : MonoBehaviour
     private void HarvestInput()
     {
         directionX = Input.GetAxisRaw("Horizontal");
-        directionY = Input.GetAxisRaw("Vertical"); 
-        var moveDirection=new Vector2(directionX,directionY).normalized;
-        var prefersMove = rb.position+moveDirection* speed;
+        directionY = Input.GetAxisRaw("Vertical");
+        var moveDirection = new Vector2(directionX, directionY).normalized;
+        var prefersMove = rb.position + moveDirection * speed;
         rb.MovePosition(prefersMove);
-        
+
 
     }
     private void Charge()
@@ -80,12 +81,24 @@ public class Player : MonoBehaviour
         Vector3 dashTarget = startPosition + (Vector3)dashDirection * dashDistance;
 
         float elapsedTime = 0f;
+
         while (elapsedTime < dashDuration)
         {
             float t = elapsedTime / dashDuration;
-            transform.position = Vector3.Lerp(startPosition, dashTarget, t);
+            Vector3 currentPosition = Vector3.Lerp(startPosition, dashTarget, t);
+            RaycastHit2D ray = Physics2D.Linecast(startPosition, currentPosition, ~LayerMask.GetMask("Player"));
+
+            if (ray.collider != null)
+            {
+                transform.position = ray.point;
+                yield break;
+            }
+
             elapsedTime += Time.deltaTime;
+            transform.position = currentPosition;
             yield return new WaitForFixedUpdate();
+
+
         }
         transform.position = dashTarget;
 
@@ -155,7 +168,7 @@ public class Player : MonoBehaviour
                 }
             }
         }
-        
+
     }
 
 
@@ -166,9 +179,7 @@ public class Player : MonoBehaviour
         animator.SetBool("idle", idle);
         animator.SetBool("walkUp", walkUp);
         animator.SetBool("walkDown", walkDown);
-        
+
     }
-    
-    
-        
-    }
+
+}
