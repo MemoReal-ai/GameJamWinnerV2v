@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class TriggerController : MonoBehaviour
 {
@@ -7,8 +8,10 @@ public class TriggerController : MonoBehaviour
     public float duration = 1.0f;
     [SerializeField] private float timeDelay = 0.5f;
 
-    private float timer = 0f; 
+    private float timer = 0f;
     private bool isTriggerActive = false;
+
+    public event Action FlikSword;
 
     public void ActivateTrigger()
     {
@@ -17,6 +20,7 @@ public class TriggerController : MonoBehaviour
         if (!isTriggerActive)
         {
             StartCoroutine(HandleTrigger());
+            FlikSword?.Invoke();
         }
     }
 
@@ -30,7 +34,7 @@ public class TriggerController : MonoBehaviour
             yield return null;
         }
 
-        triggerZone.enabled = false; 
+        triggerZone.enabled = false;
         isTriggerActive = false;
     }
 
