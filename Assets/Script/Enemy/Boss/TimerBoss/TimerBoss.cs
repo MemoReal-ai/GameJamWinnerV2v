@@ -31,7 +31,7 @@ public class TimerBoss : BossAbstract
     [SerializeField] private CrabBehavior prefabCrab;
     [SerializeField] private int countCrabOnInstantiate=1;
     [SerializeField] private List<Transform> spawnPoints=new();
-    public float TimeToSwap=>timeToSpawn;
+    public float TimeToSpawn=>timeToSpawn;
 
     private bool canSpawn=true;
     private event Action OnDead;

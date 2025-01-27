@@ -12,7 +12,7 @@ public class Wall : MonoBehaviour
     [SerializeField] private TimerBoss boss;
     private void OnValidate()
     {
-        timeToDestroy = boss.TimeToSwap;
+        timeToDestroy = boss.TimeToSpawn;
     }
     private void Update()
     {
