@@ -29,10 +29,14 @@ public class Player : MonoBehaviour
     }
 
     private void Update()
-    {
+    { 
         WalkAnimationController();
         Charge();
-
+        
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            TeleportToLastPoint();
+        }
     }
     private void FixedUpdate()
     {
@@ -170,6 +174,13 @@ public class Player : MonoBehaviour
         }
 
     }
+    
+    private void TeleportToLastPoint()
+    {
+        Vector2 teleportPoint = TeleportManager.Instance.GetTeleportPoint();
+        transform.position = teleportPoint;
+    }
+
 
 
     private void SetAnimatorBools(bool walkLeft, bool walkRight, bool idle, bool walkUp, bool walkDown)

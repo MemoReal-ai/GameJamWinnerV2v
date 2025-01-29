@@ -9,7 +9,7 @@ public class TimerBoss : BossAbstract
     [Header("Behaviuor")]
     [SerializeField] private float startDelayAttack = 1f;
     [SerializeField] private float endDelayAttack = 1f;
-    [SerializeField,Range(0,1000)] private float immortalTime = 60f;
+    [SerializeField,Range(0,1000)] private float currentImmortalTime = 60f;
    
     private float currentDelay;
     private float initialImmortalTime;
@@ -32,17 +32,19 @@ public class TimerBoss : BossAbstract
     [SerializeField] private int countCrabOnInstantiate=1;
     [SerializeField] private List<Transform> spawnPoints=new();
     public float TimeToSpawn=>timeToSpawn;
+    
+    public event Action<float> OnTimeChenged;
 
     private bool canSpawn=true;
     private event Action OnDead;
     private void OnValidate()
     {
         currentHealth = 1;
-        timeToSpawn = immortalTime/2;
+        timeToSpawn = currentImmortalTime/2;
     }
 
     private void Start()
-    {   initialImmortalTime=immortalTime;
+    {   initialImmortalTime=currentImmortalTime;
         OnDead += TakeDamage;
     }
     private void Update()
@@ -59,9 +61,9 @@ public class TimerBoss : BossAbstract
 
     private void Behaviour()
     {
-        immortalTime -= Time.deltaTime;
-
-        if (immortalTime <= 0)
+        currentImmortalTime -= Time.deltaTime;
+        OnTimeChenged?.Invoke(GetTimeRemaining());
+        if (currentImmortalTime <= 0)
         {
             isImmortal = false;
             OnDead?.Invoke();
@@ -123,7 +125,7 @@ public class TimerBoss : BossAbstract
                 break;
         }
 
-        if (immortalTime <= timeToSpawn && canSpawn == true)
+        if (currentImmortalTime <= timeToSpawn && canSpawn == true)
             Attack3();
     }
     private IEnumerator DelayAttack()
@@ -132,7 +134,7 @@ public class TimerBoss : BossAbstract
          currentDelay = Mathf
             .Lerp(endDelayAttack,
             startDelayAttack,
-           immortalTime/initialImmortalTime);
+            currentImmortalTime/initialImmortalTime);
         yield return new WaitForSeconds(currentDelay);
         BehaviourAttack();
         canAttack = true;
@@ -141,9 +143,15 @@ public class TimerBoss : BossAbstract
 
     protected override void Die()
     {
+        base.DieBoss();
         Destroy(this.gameObject);
+        
     }
 
+    protected override void DieBoss()
+    {
+        base.DieBoss();
+    }
   
 
     protected override void TakeDamage()
@@ -153,5 +161,9 @@ public class TimerBoss : BossAbstract
 
             Die();
         }
+    }
+    private float GetTimeRemaining()
+    {
+        return currentImmortalTime / initialImmortalTime;
     }
 }

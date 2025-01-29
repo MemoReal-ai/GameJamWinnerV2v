@@ -212,7 +212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   damage: 1
-  currentHealth: 20
+  currentHealth: 5
   chanceAddCoin: 1
   rewardCoin: 10
   prefabCoin: {fileID: 6370713099634583681, guid: de3e5703e53068843a843c431620d958, type: 3}

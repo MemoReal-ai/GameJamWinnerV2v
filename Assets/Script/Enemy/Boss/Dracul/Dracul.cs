@@ -96,18 +96,16 @@ public class Dracul : BossAbstract
 
     protected override void TakeDamage()
     {
-        
-        if(currentHealth<=0)
-        { 
-            
+
+        currentHealth -= playerStats.Damage;
+        OnHealthChanged?.Invoke(GetHealthPercent());
+
+        if (currentHealth < 0)
             Die();
-        }
-        else
-        {
-            currentHealth -= playerStats.Damage;
-            OnHealthChanged?.Invoke(GetHealthPercent());
-        }
+
+
     }
+    
     protected override void Attack()
     {
         for (int i = 0; i < countBullet; i++)
@@ -164,7 +162,14 @@ public class Dracul : BossAbstract
 
     protected override void Die()
     {
+        base.DieBoss();
         Destroy(this.gameObject);
+        
+    }
+
+    protected override void DieBoss()
+    {
+        base.DieBoss();
     }
 } 
  

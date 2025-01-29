@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public abstract class BossAbstract : MonoBehaviour
@@ -13,6 +14,7 @@ public abstract class BossAbstract : MonoBehaviour
     [SerializeField] protected PlayerStats playerStats;
 
     protected Transform target;
+    public event Action OnDeath;
 
    
     protected abstract void  TakeDamage();
@@ -24,7 +26,12 @@ public abstract class BossAbstract : MonoBehaviour
     protected abstract void Die();
     protected virtual float GetHealthPercent()
     {
-        return (float)maxHealth/currentHealth;
+        return (float)currentHealth/maxHealth;
+    }
+
+    protected virtual void DieBoss()
+    {
+        OnDeath?.Invoke();
     }
 
 }

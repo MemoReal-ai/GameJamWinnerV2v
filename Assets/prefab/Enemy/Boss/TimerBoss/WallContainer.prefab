@@ -49,9 +49,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wall1: {fileID: 4728187338676484439}
   wall2: {fileID: 7201278100749222291}
-  timeToDestroy: 105
+  timeToDestroy: 9.5
   targetToRotation: {fileID: 4201896667180966009}
-  speedRotation: 10
+  speedRotation: 20
   rotationAxis: {x: 0, y: 0, z: 1}
   boss: {fileID: 8635574568843601383, guid: f954c1211cd31b343ba2836a855fb650, type: 3}
 --- !u!1 &5137647649830289970
@@ -81,8 +81,8 @@ Transform:
   m_GameObject: {fileID: 5137647649830289970}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: -6.03, z: 0}
-  m_LocalScale: {x: 0.3095, y: 10, z: 1}
+  m_LocalPosition: {x: -0, y: -18.5915, z: 0}
+  m_LocalScale: {x: 0.3095, y: 35.12322, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6417737998542517049}
@@ -246,8 +246,8 @@ Transform:
   m_GameObject: {fileID: 6775373069888356413}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 6, z: 0}
-  m_LocalScale: {x: 0.3863, y: 10, z: 1}
+  m_LocalPosition: {x: 0, y: 16.5405, z: 0}
+  m_LocalScale: {x: 0.3863, y: 31.081749, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6417737998542517049}

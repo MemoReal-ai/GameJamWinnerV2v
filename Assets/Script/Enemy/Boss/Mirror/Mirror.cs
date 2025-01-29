@@ -115,23 +115,27 @@ public class Mirror : BossAbstract
 
     protected override void Die()
     {
+        base.DieBoss();
         Destroy(this.gameObject);
+        
     }
 
-    protected override void TakeDamage()
+    protected override void DieBoss()
     {
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
-        else
-        {
-            currentHealth -= playerStats.Damage;
-            OnHealthChanged?.Invoke(GetHealthPercent());
-        }
-
+        base.DieBoss();
     }
 
+   protected override void TakeDamage()
+    {
+
+        currentHealth -= playerStats.Damage;
+        OnHealthChanged?.Invoke(GetHealthPercent());
+
+        if (currentHealth < 0)
+            Die();
+
+
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("DamageTrigger"))

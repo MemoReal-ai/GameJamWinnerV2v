@@ -14,6 +14,10 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private List<EnemyPrefabData> enemyPrefabsData;
     [SerializeField] private BoxCollider2D triggerCollider;
     [SerializeField] private List<GameObject> transitionObjects;
+
+    [Header("Spawn Settings")]
+    [SerializeField] private bool useSpawnRange = true;
+
     private List<GameObject> spawnedEnemies = new List<GameObject>();
     private bool hasSpawnedEnemies = false;
 
@@ -43,14 +47,31 @@ public class EnemySpawner : MonoBehaviour
         {
             for (int i = 0; i < data.enemyCount; i++)
             {
-                Vector2 randomPosition = new Vector2(
-                    Random.Range(triggerCollider.bounds.min.x, triggerCollider.bounds.max.x),
-                    Random.Range(triggerCollider.bounds.min.y, triggerCollider.bounds.max.y)
-                );
+                Vector2 spawnPosition;
 
-                GameObject enemy = Instantiate(data.enemyPrefab, randomPosition, Quaternion.identity);
+                if (useSpawnRange)
+                {
+                    spawnPosition = new Vector2(
+                        Random.Range(triggerCollider.bounds.min.x, triggerCollider.bounds.max.x),
+                        Random.Range(triggerCollider.bounds.min.y, triggerCollider.bounds.max.y)
+                    );
+                }
+                else
+                {
+                    spawnPosition = triggerCollider.bounds.center;
+                }
+
+                GameObject enemy = Instantiate(data.enemyPrefab, spawnPosition, Quaternion.identity);
                 spawnedEnemies.Add(enemy);
-                enemy.GetComponent<Enemy>()._OnDeath += OnEnemyDeath;
+
+                if (enemy.TryGetComponent<Enemy>(out Enemy Benemy))
+                {
+                    enemy.GetComponent<Enemy>()._OnDeath += OnEnemyDeath;
+                }
+                else
+                {
+                    enemy.GetComponent<BossAbstract>().OnDeath += OnBossDeath;
+                }
             }
         }
     }
@@ -58,6 +79,19 @@ public class EnemySpawner : MonoBehaviour
     private void OnEnemyDeath(GameObject enemy)
     {
         spawnedEnemies.Remove(enemy);
+
+        if (spawnedEnemies.Count == 0)
+        {
+            foreach (var transition in transitionObjects)
+            {
+                transition.SetActive(true);
+            }
+        }
+    }
+
+    private void OnBossDeath()
+    {
+        spawnedEnemies.Clear();
 
         if (spawnedEnemies.Count == 0)
         {

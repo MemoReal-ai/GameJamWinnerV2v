@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEditor;
 using UnityEngine.SceneManagement;
 
 public class DeathScreen : MonoBehaviour
@@ -19,10 +20,7 @@ public class DeathScreen : MonoBehaviour
     {
         if (flagLose)
         { 
-            if (Input.GetKey(KeyCode.Space))
-            { 
-                SceneManager.LoadScene(0);
-            } 
+                SceneManager.LoadScene("Menu");
         } 
     }
     private void OnEnable()
