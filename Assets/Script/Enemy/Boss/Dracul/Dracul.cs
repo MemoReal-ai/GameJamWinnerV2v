@@ -37,7 +37,8 @@ public class Dracul : BossAbstract
   
 
     private void Start()
-    {   
+    {
+        playerStats = FindAnyObjectByType<PlayerStats>();
      maxHealth=currentHealth;
      target = FindAnyObjectByType<PlayerStats>().transform;  
     }
@@ -63,7 +64,6 @@ public class Dracul : BossAbstract
             startTeleportTime = 0f;
        
             Vector2 randomDirection = UnityEngine.Random.insideUnitCircle.normalized;
-            Debug.Log(target.position);
             Vector3 teleportPosition = target.position + (Vector3)randomDirection * radiusTeleport;
 
       
@@ -97,6 +97,7 @@ public class Dracul : BossAbstract
     protected override void TakeDamage()
     {
 
+       
         currentHealth -= playerStats.Damage;
         OnHealthChanged?.Invoke(GetHealthPercent());
 

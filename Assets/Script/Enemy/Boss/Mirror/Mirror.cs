@@ -28,6 +28,7 @@ public class Mirror : BossAbstract
     private void Start()
     {
         maxHealth = currentHealth;
+        playerStats = FindAnyObjectByType<PlayerStats>();
 
         target = FindAnyObjectByType<PlayerStats>().transform;
         attack = FindAnyObjectByType<TriggerController>();
