@@ -11,7 +11,7 @@ public class Wall : MonoBehaviour
     [SerializeField] private float speedRotation=1f;
     [SerializeField] private Vector3 rotationAxis = Vector3.forward;
     [SerializeField] private TimerBoss boss;
-    [SerializeField] private int damage=1;
+  
     private void OnValidate()
     {
         timeToDestroy = boss.TimeToSpawn;

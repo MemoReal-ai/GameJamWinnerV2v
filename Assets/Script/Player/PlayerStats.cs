@@ -50,8 +50,8 @@ public class PlayerStats : MonoBehaviour
 
         currentHealth -= damage;
         OnHealthChanged?.Invoke(Clamper01Health());
-
-        if (currentHealth == 0)
+        OnHealthIntChanged.Invoke();
+        if (currentHealth <= 0)
         {
             OnDead?.Invoke();
         }

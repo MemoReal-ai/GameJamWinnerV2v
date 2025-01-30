@@ -30,4 +30,5 @@ public class HealthEnemyView : MonoBehaviour
         healthBar.fillAmount = health;
     }
 
+    
 }

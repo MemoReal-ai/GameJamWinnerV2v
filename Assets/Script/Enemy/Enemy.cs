@@ -30,10 +30,7 @@ public abstract class Enemy : MonoBehaviour
         maxHealth = currentHealth;
         player = FindAnyObjectByType<PlayerStats>();
     }
-    protected virtual void Behaviour()
-    {
-
-    }
+    protected abstract void Behaviour();
 
     protected virtual void Attack() => player.TakeDamage(damage);
 
@@ -83,7 +80,7 @@ public abstract class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private float Clamper01Health()
+    protected virtual float Clamper01Health()
     {
 
         return (float)currentHealth / maxHealth;
