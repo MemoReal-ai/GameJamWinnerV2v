@@ -49,11 +49,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wall1: {fileID: 4728187338676484439}
   wall2: {fileID: 7201278100749222291}
-  timeToDestroy: 9.5
+  timeToDestroy: 30
   targetToRotation: {fileID: 4201896667180966009}
   speedRotation: 20
   rotationAxis: {x: 0, y: 0, z: 1}
   boss: {fileID: 8635574568843601383, guid: f954c1211cd31b343ba2836a855fb650, type: 3}
+  damage: 1
 --- !u!1 &5137647649830289970
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,6 +66,7 @@ GameObject:
   - component: {fileID: 7201278100749222291}
   - component: {fileID: 8079706922675564103}
   - component: {fileID: 6430872697078597873}
+  - component: {fileID: 3676953638242315875}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -188,6 +190,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3676953638242315875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5137647649830289970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be7d4402991a606408e9799b72c31c0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &5624412446335586417
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,6 +245,7 @@ GameObject:
   - component: {fileID: 4728187338676484439}
   - component: {fileID: 580868848487014519}
   - component: {fileID: 3815653105845102726}
+  - component: {fileID: 4492056832066436627}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -353,3 +369,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4492056832066436627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6775373069888356413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be7d4402991a606408e9799b72c31c0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1

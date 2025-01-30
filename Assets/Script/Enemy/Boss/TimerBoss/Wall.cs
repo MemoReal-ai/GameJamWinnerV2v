@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class Wall : MonoBehaviour
@@ -10,6 +11,7 @@ public class Wall : MonoBehaviour
     [SerializeField] private float speedRotation=1f;
     [SerializeField] private Vector3 rotationAxis = Vector3.forward;
     [SerializeField] private TimerBoss boss;
+    [SerializeField] private int damage=1;
     private void OnValidate()
     {
         timeToDestroy = boss.TimeToSpawn;
@@ -27,4 +29,5 @@ public class Wall : MonoBehaviour
         if (timeToDestroy <= 0f)
             Destroy(gameObject);
     }
+    
 }
