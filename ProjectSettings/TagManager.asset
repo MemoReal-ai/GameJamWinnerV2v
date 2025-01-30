@@ -4,17 +4,18 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Ground
+  - Enemy
+  - TeleportTrigger
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - DamageTrigger
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Player
+  - Wall
+  - Shop
   - 
   - 
   - 
@@ -41,9 +42,6 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Ground
-    uniqueID: 907353899
     locked: 0
   m_RenderingLayers:
   - Default

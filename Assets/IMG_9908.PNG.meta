@@ -1,0 +1,502 @@
+fileFormatVersion: 2
+guid: 642b51b9b2678aa4dbbfdd49c93e9708
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 534999476837808639
+    second: IMG_9908_0
+  - first:
+      213: -652651202221379247
+    second: IMG_9908_1
+  - first:
+      213: -7359182734651514407
+    second: IMG_9908_2
+  - first:
+      213: 653016579442032148
+    second: IMG_9908_3
+  - first:
+      213: 5991711105868026924
+    second: IMG_9908_4
+  - first:
+      213: -2474702908996929911
+    second: IMG_9908_5
+  - first:
+      213: -3200172493293687009
+    second: IMG_9908_6
+  - first:
+      213: 5877413182328885892
+    second: IMG_9908_7
+  - first:
+      213: 736370181136241080
+    second: IMG_9908_8
+  - first:
+      213: 464062974476223661
+    second: IMG_9908_9
+  - first:
+      213: -5841017848524481498
+    second: IMG_9908_10
+  - first:
+      213: -4048665182558712623
+    second: IMG_9908_11
+  - first:
+      213: -5328395082236593367
+    second: IMG_9908_12
+  - first:
+      213: -16576367937817007
+    second: IMG_9908_13
+  - first:
+      213: -862193854323706697
+    second: IMG_9908_14
+  - first:
+      213: 3349628813720721764
+    second: IMG_9908_15
+  - first:
+      213: 8209740174847542538
+    second: IMG_9908_16
+  - first:
+      213: 8945776507233254849
+    second: IMG_9908_17
+  - first:
+      213: -8307683476115330558
+    second: IMG_9908_18
+  - first:
+      213: 2595963116943652886
+    second: IMG_9908_19
+  - first:
+      213: 640201366478363690
+    second: IMG_9908_20
+  - first:
+      213: -8363762271473226148
+    second: IMG_9908_21
+  - first:
+      213: 4945211620922112448
+    second: IMG_9908_22
+  - first:
+      213: 4107674112682116414
+    second: IMG_9908_23
+  - first:
+      213: -4922327196602002350
+    second: IMG_9908_24
+  - first:
+      213: -1142110895139278990
+    second: IMG_9908_25
+  - first:
+      213: 4744006594791604221
+    second: IMG_9908_26
+  - first:
+      213: 5193046677897229503
+    second: IMG_9908_27
+  - first:
+      213: 3204359773602840525
+    second: IMG_9908_28
+  - first:
+      213: -6081832627900680624
+    second: IMG_9908_29
+  - first:
+      213: 2610055792170122058
+    second: IMG_9908_30
+  - first:
+      213: -676694851285395260
+    second: IMG_9908_31
+  - first:
+      213: 8514792963072379952
+    second: IMG_9908_32
+  - first:
+      213: -4297536652035795145
+    second: IMG_9908_33
+  - first:
+      213: -469358526452414377
+    second: IMG_9908_34
+  - first:
+      213: -3246525823396038916
+    second: IMG_9908_35
+  - first:
+      213: 1731898943348767020
+    second: IMG_9908_36
+  - first:
+      213: 683637498130526165
+    second: IMG_9908_37
+  - first:
+      213: 5881805529104741539
+    second: IMG_9908_38
+  - first:
+      213: -1307383751590640875
+    second: IMG_9908_39
+  - first:
+      213: -4967049208617400751
+    second: IMG_9908_40
+  - first:
+      213: -6745253533461194262
+    second: IMG_9908_41
+  - first:
+      213: 7040276005538210183
+    second: IMG_9908_42
+  - first:
+      213: -746678781323063470
+    second: IMG_9908_43
+  - first:
+      213: 1178615888356520268
+    second: IMG_9908_44
+  - first:
+      213: -4308639915764727192
+    second: IMG_9908_45
+  - first:
+      213: 3731006429403485749
+    second: IMG_9908_46
+  - first:
+      213: -4469423534137522425
+    second: IMG_9908_47
+  - first:
+      213: 1061812130338359983
+    second: IMG_9908_48
+  - first:
+      213: 2330888571268341562
+    second: IMG_9908_49
+  - first:
+      213: 6140236913513827033
+    second: IMG_9908_50
+  - first:
+      213: 3495800394562702284
+    second: IMG_9908_51
+  - first:
+      213: -3123430458969412442
+    second: IMG_9908_52
+  - first:
+      213: -2577266205683936454
+    second: IMG_9908_53
+  - first:
+      213: 4876825647060528247
+    second: IMG_9908_54
+  - first:
+      213: -8456042727278042612
+    second: IMG_9908_55
+  - first:
+      213: 2725300035678278873
+    second: IMG_9908_56
+  - first:
+      213: -2050949798427086540
+    second: IMG_9908_57
+  - first:
+      213: -8196221004110028238
+    second: IMG_9908_58
+  - first:
+      213: 3208040003070004018
+    second: IMG_9908_59
+  - first:
+      213: -5656093208901205784
+    second: IMG_9908_60
+  - first:
+      213: 4218264537670688369
+    second: IMG_9908_61
+  - first:
+      213: -2513970981303534512
+    second: IMG_9908_62
+  - first:
+      213: 1814771856637665552
+    second: IMG_9908_63
+  - first:
+      213: 365391505385359638
+    second: IMG_9908_64
+  - first:
+      213: 1419489527894243027
+    second: IMG_9908_65
+  - first:
+      213: 374143060125865585
+    second: IMG_9908_66
+  - first:
+      213: -4673840250678105564
+    second: IMG_9908_67
+  - first:
+      213: 4790185028830008347
+    second: IMG_9908_68
+  - first:
+      213: -4592723646391443842
+    second: IMG_9908_69
+  - first:
+      213: 2104154356958276347
+    second: IMG_9908_70
+  - first:
+      213: 2390563751450040031
+    second: IMG_9908_71
+  - first:
+      213: -8026048163511419000
+    second: IMG_9908_72
+  - first:
+      213: 7743270191346700191
+    second: IMG_9908_73
+  - first:
+      213: 4222717322623430000
+    second: IMG_9908_74
+  - first:
+      213: 15047650274654124
+    second: IMG_9908_75
+  - first:
+      213: -6961389071813098262
+    second: IMG_9908_76
+  - first:
+      213: 5556684798713574631
+    second: IMG_9908_77
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: IMG_9908_20
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 528
+        width: 222
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2c99a930c372e800800000000000000
+      internalID: 640201366478363690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_9908_53
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 449
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3317967a06bb3cd0800000000000000
+      internalID: -2577266205683936454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_9908_62
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 261
+        width: 235
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05c33cb46b49c1dd0800000000000000
+      internalID: -2513970981303534512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_9908_68
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 180
+        width: 232
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b149ecb77e72a7240800000000000000
+      internalID: 4790185028830008347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_9908_0
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 505
+        width: 282
+        height: 268
+      alignment: 9
+      pivot: {x: 0.50719696, y: 0.53281415}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12f9b6c32f05f0f4f8dccb645f7ff2ec
+      internalID: -1664452775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: af6aa79cf81a1d640ae3d3b1ec46acfa
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      IMG_9908_0: -1664452775
+      IMG_9908_59: -625927600
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
