@@ -7,21 +7,15 @@ using UnityEngine.SceneManagement;
 public class DeathScreen : MonoBehaviour
 {
     [SerializeField] private PlayerStats player;
-    [SerializeField] private GameObject conteiner;
 
-    private bool flagLose=false;
-
-    private void Start()
-    {
-        conteiner.SetActive(false);
-    }
+    private bool flagLose = false;
 
     private void Update()
     {
         if (flagLose)
-        { 
-                SceneManager.LoadScene("Menu");
-        } 
+        {
+            SceneManager.LoadScene("Menu");
+        }
     }
     private void OnEnable()
     {
@@ -36,10 +30,6 @@ public class DeathScreen : MonoBehaviour
     private void DeathScreenView()
     {
         Time.timeScale = 0f;
-        conteiner.SetActive(true);
-        flagLose = true;    
-       
-           
- 
+        flagLose = true;
     }
 }
