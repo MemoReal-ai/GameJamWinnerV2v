@@ -231,7 +231,7 @@ MonoBehaviour:
   player: {fileID: 754623237429492377, guid: fec15d15a583f6e4194e959a1a5ce4d5, type: 3}
   cost: 30
   nameBuff: Restore Heal
-  image: {fileID: 1666383212531200880, guid: b285b8bbc42fa794ca731adcf7acf29e, type: 3}
+  image: {fileID: -6464869995595449900, guid: fa84cfb91ce2f63468e1c87bf0fedb3d, type: 3}
   button: {fileID: 968575800417459857}
 --- !u!114 &1248562715418832410
 MonoBehaviour:
@@ -385,10 +385,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 42.2
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 2
@@ -423,7 +423,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 28.833374, y: 0, z: 25.728271, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
