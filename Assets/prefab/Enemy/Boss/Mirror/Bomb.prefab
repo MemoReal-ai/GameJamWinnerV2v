@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93c6f5c223e066247a177bf22ad3ecb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 8
   minePrefab: {fileID: -7827631497206785916, guid: 8012d87ae0c9b2e40b49b625113bb1bf, type: 3}
   mineCount: 5
-  timeToExplosion: 2
-  radius: 3
+  timeToExplosion: 0.5
+  radius: 2
