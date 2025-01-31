@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5027994989865738870}
   - component: {fileID: 4786184247031012310}
   - component: {fileID: 5937618589153655535}
+  - component: {fileID: 1052094531319272819}
   m_Layer: 0
   m_Name: Mirror
   m_TagString: Untagged
@@ -211,6 +212,28 @@ MonoBehaviour:
   boss: {fileID: 4786184247031012310}
   health: {fileID: 4870683290357675959}
   fillDuration: 1
+--- !u!95 &1052094531319272819
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4218187544027556724}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 72ecda60f991fd3459f4dc04f7663ec5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &6191789004581407280
 PrefabInstance:
   m_ObjectHideFlags: 0
