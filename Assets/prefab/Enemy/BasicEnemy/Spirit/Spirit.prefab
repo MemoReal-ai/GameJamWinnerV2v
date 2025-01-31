@@ -197,11 +197,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0795cd046489a994bab7cafab7160bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2
   damage: 2
   currentHealth: 1
-  chanceAddCoin: 1
-  rewardCoin: 1
+  chanceAddCoin: 0.1
+  rewardCoin: 5
   prefabCoin: {fileID: 6370713099634583681, guid: de3e5703e53068843a843c431620d958, type: 3}
   animator: {fileID: 485827594042553070}
-  timeLife: 6.05
+  timeLife: 4

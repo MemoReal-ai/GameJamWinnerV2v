@@ -213,8 +213,8 @@ MonoBehaviour:
   speed: 1
   damage: 1
   currentHealth: 5
-  chanceAddCoin: 1
-  rewardCoin: 10
+  chanceAddCoin: 0.688
+  rewardCoin: 3
   prefabCoin: {fileID: 6370713099634583681, guid: de3e5703e53068843a843c431620d958, type: 3}
   animator: {fileID: 5210838092520516747}
   distanceToAttack: 1

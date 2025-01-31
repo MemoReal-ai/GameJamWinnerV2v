@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Dracul : BossAbstract
 {
+    [Header("Animator")]
+    [SerializeField] private Animator animator;
+
     [Header("Attack1 Stats")]
     [SerializeField] private BulletAttack1 prefab;
     [SerializeField] private int countBullet;
@@ -78,7 +81,9 @@ public class Dracul : BossAbstract
     protected override void BehaviourAttack()
     {
         var currentAttack = UnityEngine.Random.Range(1, 4);
-       
+        
+        animator.SetTrigger("Attack");
+
         switch(currentAttack)
         {
             case 1:

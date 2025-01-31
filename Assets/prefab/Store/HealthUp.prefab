@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 754623237429492377, guid: fec15d15a583f6e4194e959a1a5ce4d5, type: 3}
-  cost: 3
+  cost: 5
   nameBuff: +2 Health
   image: {fileID: 3191122964850554743, guid: b5fb49429f9922b4797ae8ae48fd9ad0, type: 3}
   button: {fileID: 968575800417459857}
