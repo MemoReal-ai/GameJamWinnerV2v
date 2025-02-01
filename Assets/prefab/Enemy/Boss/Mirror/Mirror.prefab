@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ee2931bd2236b043892152351f4cfe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 60
+  currentHealth: 100
   speed: 1
   playerStats: {fileID: 754623237429492377, guid: fec15d15a583f6e4194e959a1a5ce4d5, type: 3}
   cooldawnAttack: 1
