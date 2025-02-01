@@ -33,7 +33,6 @@ public class CrabBehavior : Enemy
 
         if (distance > distanceToAttack)
         {
-       
             _timeLastAttack = 0;
         }
 
