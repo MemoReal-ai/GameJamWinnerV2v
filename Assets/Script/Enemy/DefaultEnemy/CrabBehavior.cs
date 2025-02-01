@@ -31,6 +31,13 @@ public class CrabBehavior : Enemy
         var distance = Vector2.Distance(transform.position, player.transform.position);
         _timeLastAttack += Time.deltaTime;
 
+        if (distance > distanceToAttack)
+        {
+       
+            _timeLastAttack = 0;
+        }
+
+
         if (distance < distanceToAttack && _timeLastAttack > coldownAttack)
         {
             animator.SetTrigger("Attack");
